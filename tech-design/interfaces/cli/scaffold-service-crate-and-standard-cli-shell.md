@@ -31,7 +31,7 @@ id: mesh-cli-shell-contract
 entry: start
 nodes:
   start:       { kind: start,    label: "mesh <subcommand>" }
-  parse:       { kind: process,  label: "clap parses top-level command surface from apps/mesh/src/main.rs" }
+  parse:       { kind: process,  label: "clap parses top-level command surface from src/main.rs" }
   llm:         { kind: terminal, label: "llm [--topic outline|boundaries] [--format md|json] -> cli_std::llm::render(mesh topics)" }
   upgrade:     { kind: terminal, label: "upgrade [--version TAG] [--check] -> cli_std::upgrade with ToolInfo{name=mesh, release_prefix=mesh@}" }
   issue:       { kind: terminal, label: "issue <search|view|create> -> cli_std::issue scoped to app:mesh" }
@@ -83,23 +83,23 @@ changes:
     action: modify
     section: logic
     impl_mode: hand-written
-  - path: "apps/mesh/Cargo.toml"
+  - path: "Cargo.toml"
     action: create
     section: logic
     impl_mode: hand-written
-  - path: "apps/mesh/build.rs"
+  - path: "build.rs"
     action: create
     section: logic
     impl_mode: hand-written
-  - path: "apps/mesh/src/lib.rs"
+  - path: "src/lib.rs"
     action: create
     section: logic
     impl_mode: hand-written
-  - path: "apps/mesh/src/main.rs"
+  - path: "src/main.rs"
     action: create
     section: logic
     impl_mode: hand-written
-  - path: "apps/mesh/tests/cli_contract.rs"
+  - path: "tests/cli_contract.rs"
     action: create
     section: unit-test
     impl_mode: hand-written
@@ -143,7 +143,7 @@ requirements:
     verify: cli_contract::help_lists_all_verbs
   workspace_member:
     id: R1
-    text: "`apps/mesh` is a Cargo workspace member (lib + bin) with build.rs wiring cli_std's stamp(\"MESH\")."
+    text: "`mesh` is a Cargo workspace member (lib + bin) with build.rs wiring cli_std's stamp(\"MESH\")."
     kind: functional
     risk: high
     verify: cargo build -p mesh

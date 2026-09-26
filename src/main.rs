@@ -1,4 +1,4 @@
-// SPEC-MANAGED: apps/mesh/tech-design/interfaces/cli/scaffold-service-crate-and-standard-cli-shell.md#logic
+// SPEC-MANAGED: tech-design/interfaces/cli/scaffold-service-crate-and-standard-cli-shell.md#logic
 // <HANDWRITE gap="mesh-cli-shell-scaffold" tracker="#1970" reason="Initial Mesh CLI shell: standard llm/upgrade/issue verbs plus placeholder domain verbs before any graph engine exists.">
 use anyhow::Result;
 use clap::{Parser, Subcommand};
@@ -135,7 +135,7 @@ struct PlaceholderArgs {
 
 const TOOL: cli_std::ToolInfo = cli_std::ToolInfo {
     project: "mesh",
-    repo: "chrischeng-c4/axiom",
+    repo: "faberline/mesh",
     target: env!("MESH_TARGET"),
     version: env!("CARGO_PKG_VERSION"),
     git_sha: env!("MESH_GIT_SHA"),
@@ -274,7 +274,7 @@ async fn issue(args: IssueArgs) -> Result<()> {
 /// "known gap" from a generic clap usage error (2) or an anyhow bail (1).
 fn not_implemented_yet(thing: &str) -> Result<()> {
     eprintln!("mesh: not implemented yet: {thing}");
-    eprintln!("next: track progress at https://github.com/chrischeng-c4/axiom/issues/1969");
+    eprintln!("next: track progress at https://github.com/faberline/axiom/issues/1969");
     std::process::exit(3);
 }
 // </HANDWRITE>

@@ -17,7 +17,7 @@ nodes, typed edges, properties, and traversal.
 ## Contributing
 
 Repo-wide authoring rules live in
-[../../CONTRIBUTING.md](../../CONTRIBUTING.md).
+[../../CONTRIBUTING.md](https://github.com/faberline/workspace/blob/main/CONTRIBUTING.md).
 
 ## Capabilities
 
@@ -54,12 +54,12 @@ and admin workflows while following the repository-wide CLI convention.
   node/edge/query verbs, and admin/debug verbs.
 - Gate — behavior: pending CLI convention gate - required standard verbs, graph
   workflow ergonomics, and offline agent docs
-- Gate: passing: apps/mesh/tests/cli_contract.rs (`cargo test -p mesh`)
+- Gate: passing: tests/cli_contract.rs (`cargo test -p mesh`)
 
 | Work Root | Kind | WI | Gate / Evidence |
 |---|---|---:|---|
 | mesh-cli-convention-and-graph-verbs | epic | #1969 | pending CLI convention gate |
-| mesh-cli-shell-scaffold | change | #1970 | `cargo test -p mesh` (5/5 passing); apps/mesh/tests/cli_contract.rs |
+| mesh-cli-shell-scaffold | change | #1970 | `cargo test -p mesh` (5/5 passing); tests/cli_contract.rs |
 
 ### Long-Running Stability
 
@@ -71,7 +71,7 @@ the derived index or losing committed log entries.
   snapshot, and recovery paths.
 - Gate — stability: pending long-running graph gate - soak, restart,
   index-rebuild recovery, bounded memory, and backpressure behavior
-- Source: `pending: apps/mesh/tests/long_running_stability.rs`
+- Source: `pending: tests/long_running_stability.rs`
 - Evidence: pending long-running graph gate
 
 ### Security Hardening
@@ -84,7 +84,7 @@ auditability, network policy, and managed secret rotation.
   isolation, network policy, audit events, secret rotation, and request limits.
 - Gate — behavior: pending security gate - auth failure cases, collection
   isolation, audit emission, secret rotation, and abuse limits
-- Source: `pending: apps/mesh/tests/security_hardening.rs`
+- Source: `pending: tests/security_hardening.rs`
 - Evidence: pending security hardening gate
 
 ### Competitor Feature Parity
@@ -97,7 +97,7 @@ with comparison scope changed only when product requirements change.
   and Neptune-style graph services.
 - Gate — behavior: pending competitor feature gate - node/edge model, property
   schema, traversal/path query, indexing, and retention
-- Source: `pending: apps/mesh/benchmark/competitor-feature-matrix.md`
+- Source: `pending: benchmark/competitor-feature-matrix.md`
 - Evidence: pending competitor feature gate
 
 ### Competitor Performance
@@ -110,8 +110,8 @@ benchmarks only when the comparison scope changes or a human explicitly asks.
   index-rebuild cost, and shard rebalance efficiency.
 - Gate — efficiency: pending competitor performance gate - pinned external
   baseline and Mesh-owned graph measurements
-- Source: `pending: apps/mesh/benchmark/competitor-performance-baseline.md`,
-  `pending: apps/mesh/meter-mesh-query.toml`
+- Source: `pending: benchmark/competitor-performance-baseline.md`,
+  `pending: meter-mesh-query.toml`
 - Evidence: pending competitor performance gate
 
 ### Property Graph Core
@@ -125,7 +125,7 @@ relationship graph, with explicit schema and durability semantics.
   properties.
 - Gate — behavior: pending graph write conformance gate - schema/type
   validation, edge endpoint integrity, and durable append
-- Source: `pending: apps/mesh/tests/property_graph_core.rs`
+- Source: `pending: tests/property_graph_core.rs`
 - Evidence: pending graph write conformance gate
 
 ### Traversal & Path Query
@@ -141,8 +141,8 @@ depending on Lumen search indexes or Cube analytical storage.
   match, path result correctness, and deterministic ordering
 - Gate — efficiency: pending meter traversal gate - retained latency/resource
   floors
-- Source: `pending: apps/mesh/tests/traversal_and_path_query.rs`,
-  `pending: apps/mesh/meter-mesh-query.toml`
+- Source: `pending: tests/traversal_and_path_query.rs`,
+  `pending: meter-mesh-query.toml`
 - Evidence: pending traversal query gate
 
 ### Log-Driven Derived Index
@@ -157,7 +157,7 @@ at all times; it never becomes the durable owner of relationship data.
 - Gate — behavior: pending derived-index gate - log replay determinism and full
   index rebuild from log
 - Gate — stability: pending rebuild-under-load gate
-- Source: `pending: apps/mesh/tests/log_driven_derived_index.rs`
+- Source: `pending: tests/log_driven_derived_index.rs`
 - Evidence: pending derived-index gate
 
 ### HTTP/2 API List
@@ -170,7 +170,7 @@ query, and operator workflows.
   node/edge/query/admin routes.
 - Gate — behavior: pending h2c/OpenAPI route-list gate - probes, metrics,
   OpenAPI, and route inventory
-- Source: `pending: apps/mesh/tests/http_api.rs`
+- Source: `pending: tests/http_api.rs`
 - Evidence: pending h2c/OpenAPI route-list gate
 
 ### Kubernetes-Native Deployment
@@ -184,7 +184,7 @@ storage, backup policy, and shard lifecycle.
 - Gate — behavior: pending kustomize/operator render gate - CRD, operator, and
   instance render
 - Gate — stability: pending kind graph dogfood
-- Source: `pending: apps/mesh/k8s`
+- Source: `pending: k8s`
 - Evidence: pending k8s render/dogfood gates
 
 ### Primary Replicas
@@ -197,5 +197,5 @@ state survives failover.
   `core/raft-core` and `core/raft-runtime`.
 - Gate — stability: pending raft graph failover gate - shard ownership and
   derived index survive failover
-- Source: `pending: apps/mesh/tests/raft_shard_ownership.rs`
+- Source: `pending: tests/raft_shard_ownership.rs`
 - Evidence: pending raft shard failover gate

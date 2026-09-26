@@ -1,4 +1,32 @@
 # <HANDWRITE gap="mesh-cli-shell-scaffold" tracker="#1970" reason="Initial Mesh Rust crate manifest: CLI shell only, no graph engine yet.">
+[workspace]
+resolver = "2"
+members = ["."]
+
+[workspace.package]
+version = "0.4.13"
+authors = ["Chris Cheng <chris.cheng.c4@gmail.com>"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/faberline/mesh"
+
+[workspace.dependencies]
+tokio = { version = "1.40", features = ["full"] }
+anyhow = "1.0"
+clap = { version = "4", features = ["derive", "string"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.test]
+opt-level = 1
+
 [package]
 name = "mesh"
 version.workspace = true

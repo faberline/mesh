@@ -1,4 +1,4 @@
-// SPEC-MANAGED: apps/mesh/tech-design/interfaces/cli/scaffold-service-crate-and-standard-cli-shell.md#unit-test
+// SPEC-MANAGED: tech-design/interfaces/cli/scaffold-service-crate-and-standard-cli-shell.md#unit-test
 // <HANDWRITE gap="mesh-cli-shell-scaffold" tracker="#1970" reason="R1-R6 verification for the initial Mesh CLI shell.">
 //! Black-box tests against the real compiled `mesh` binary (WI #1970,
 //! requirements R1-R6).
